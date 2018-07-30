@@ -29,7 +29,7 @@ span {
   color: #8E3557;
 }
 span, button, input {
-  margin: 10px;
+  margin: 15px;
 }
 @media (min-width: 992px){
   .col-md-10 {
