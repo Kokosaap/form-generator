@@ -1,94 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
+<title>Form generator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-  <meta charset="UTF-8">
-  <title>Kokosaap Form Generator</title>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<body class="w3-light-grey">
 
-</head>
-<body>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle navbar-toggle-sidebar collapsed">
-          MENU
-        </button>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a style="color: #8E3557;" class="navbar-brand" href="#">
-          Générateur de formulaire
-        </a>
-      </div>
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown ">
-            <a style="color: #8E3557;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              Mon Compte
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>  	<div class="container-fluid main-container">
-      <div class="col-md-2 sidebar">
-        <div class="row">
-          <!-- uncomment code for absolute positioning tweek see top comment in css -->
-          <div class="absolute-wrapper"> </div>
-          <!-- Menu -->
-          <div class="side-menu">
-            <nav class="navbar navbar-default" role="navigation">
-              <!-- Main Menu -->
-              <div class="side-menu-container">
-                <div id="droite">
-                  <strong style="color: #8E3557;">Création du formulaire</strong><br><br>
-                  <button type="button" id="leLabel" class="btnprincipal btn btn-outline-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Fieldset</button>
-                  <button type="button" id="leBouton" class="btnprincipal btn btn-outline-warning">Bouton</button>
-                  <button type="button" id="cForm" class="btnprincipal btn btn-outline-warning">Code Formulaire</button>
-                  <button type="button" id="supprimer" class="btnprincipal btn btn-outline-warning">Effacer les éléments</button>
-                  <hr>
-                </div>
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+
+        <div class="w3-container">
+          <div class="side-menu-container">
+            <div id="droite">
+              <h2 class="title-create-form"><strong style="color: #009688">Création du formulaire</strong><br><br></h2>
+              <button type="button" id="leLabel" class="btnprincipal btn btn-outline-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Fieldset</button>
+              <button type="button" id="leBouton" class="btnprincipal btn btn-outline-warning">Bouton</button>
+              <button type="button" id="cForm" class="btnprincipal btn btn-outline-warning">Code Formulaire</button>
+              <button type="button" id="supprimer" class="btnprincipal btn btn-outline-warning">Effacer les éléments</button>
+              <hr>
+
+              <div id="container">
+                <label>Choisissez un Label</label>
+                <input type="text" id="idinput">
+                <br/><br/>
+                <label>Choisissez le type du champs </label>
+                <br/>
+                <input type="radio" id="typeField_txt" name="chooseType" value="text" checked /><label for="typeField_txt">Text</label>
+                <br/>
+                <input type="radio" id="typeField_pswd" name="chooseType" value="password"  /><label for="typeField_pswd">Password</label>
+                <br/>
+                <input type="radio" id="typeField_date" name="chooseType" value="date" /><label for="typeField_date">Date</label>
+                <br/>
+                <input type="radio" id="typeField_mail" name="chooseType" value="email" /><label for="typeField_mail">Email</label>
+                <br/>
+                <input type="radio" id="typeField_nb" name="chooseType" value="number" /><label for="typeField_nb">Number</label>
+                <br/><br/>
+                <button type="button" class="btn" id="btnok">Valider</button><button type="button" class="btn" id="btnannuler">Annuler</button>
               </div>
-            </nav>
-
-          </div>
-        </div>
-      </div>
-      <div class="col-md-10 content">
-        <div class="panel panel-default">
-          <div style="color: #8E3557;" class="panel-heading">
-            Affichage du formulaire généré
-          </div>
-          <div class="panel-body">
-            <div id="gauche">
-
+              <div id="container2"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-10 content">
-        <div class="panel panel-default">
-          <div style="color: #8E3557;" class="panel-heading">
-            Code Formulaire
-          </div>
-          <div class="panel-body">
-            <div id="code-form">
-            </div>
-          </div>
-        </div>
-      </div>
+      </div><br>
 
+    <!-- End Left Column -->
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="fonctionnalities.js"></script>
-  </body>
-  </html>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Formulaire généré</h2>
+        <div class="w3-container">
+          <div id="gauche"></div>
+          <br/>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Code HTML du formulaire</h2>
+        <div class="w3-container">
+          <div id="code-form"></div>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Kokosaap Generator ;)</p>
+  <p>See you !</p>
+
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="fonctionnalities.js"></script>
+</body>
+</html>
