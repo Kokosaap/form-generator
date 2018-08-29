@@ -1,6 +1,6 @@
 // Le Fieldset
 $('#leLabel').click(function(){
-  $('hr').after('<div id="container">Choisissez un Label <input type="text" id="idinput"><br/><br/>Choisissez le type du champ <br/><input type="radio" id="typeField_txt" name="chooseType" checked /><label for="text">Text</label><br/><input type="radio" id="typeField_pswd" name="chooseType" /><label for="password">Password</label><br/><input type="radio" id="typeField_date" name="chooseType" /><label for="date">Date</label><br/><input type="radio" id="typeField_mail" name="chooseType" /><label for="email">Email</label><br/><input type="radio" id="typeField_nb" name="chooseType" value="number" /><label for="typeField_nb">Number</label><br/><br/><button type="button" class="btn" id="btnok">Valider</button><button type="button" class="btn" id="btnannuler">Annuler</button></div><div id="container2"></div>');
+  $('hr').after('<div id="container"><div><p>Choisissez un Label</p> </div><input type="text" id="idinput"><br/><br/><div>Choisissez le type du champ</div><br/><div id="verticalBullets"><input type="radio" id="typeField_txt" name="chooseType" checked /><label for="text">Text</label><br/><input type="radio" id="typeField_pswd" name="chooseType" /><label for="password">Password</label><br/><input type="radio" id="typeField_date" name="chooseType" /><label for="date">Date</label><br/><input type="radio" id="typeField_mail" name="chooseType" /><label for="email">Email</label><br/><input type="radio" id="typeField_nb" name="chooseType" /><label for="number">Number</label></div><br/><br> Pour rendre ce champs obligatoire, cocher cette case<br/><input type="checkbox" id="required" name="required" value="required">Required<br/><br/><button type="button" class="btn" id="btnok">Valider</button><button type="button" class="btn" id="btnannuler">Annuler</button></div><div id="container2"></div>');
 
 
   // Ajax
@@ -17,10 +17,18 @@ $('#leLabel').click(function(){
   // Button Valider
   $("#btnok").click(function(){
     // La var est dans un span et on récupère la valeur de l'input
-    var selectedProduct =$(  $(":radio[name=chooseType]:checked").prop("labels") ).text();
+    var selectedProduct = $(  $(":radio[name=chooseType]:checked").prop("labels") ).text();
     console.log(selectedProduct);
-    var validation = '<label>'+ $('#idinput').val() + '</label><input class="form-control" type="' + selectedProduct + '" id="' + $('#idinput').val() +'"><br>';
+    var requireField = $('input[name="required"]:checked').val();
+    console.log(requireField);
 
+    if ($('#required').is(":checked") == true) {
+      var validation = '<label>'+ $('#idinput').val() + '</label><input class="form-control" type="' + selectedProduct + '" id="' + $('#idinput').val() + '" required="' + requireField + '" ><br>';
+      console.log("je passe dans le if car je suis required");
+    } else {
+      var validation = '<label>'+ $('#idinput').val() + '</label><input class="form-control" type="' + selectedProduct + '" id="' + $('#idinput').val() + '"><br>';
+      console.log("je passe dans le else car je suis pas required");
+    }
     // On insère la valeur de validation dans la div #gauche
     $('#gauche').append(validation);
     // Si on click sur le bouton valider l'info est envoyé dans la div #gauche et le champs label s'en va
