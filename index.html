@@ -13,87 +13,92 @@
 
 <body class="w3-light-grey">
 
-<!-- Page Container -->
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <!-- Page Container -->
+  <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <!-- The Grid -->
-  <div class="w3-row-padding">
+    <!-- The Grid -->
+    <div class="w3-row-padding">
 
-    <!-- Left Column -->
-    <div class="w3-third">
+      <!-- Left Column -->
+      <div class="w3-third">
 
-      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-white w3-text-grey w3-card-4">
 
-        <div class="w3-container">
-          <div class="side-menu-container">
-            <div id="droite">
-              <h2 class="title-create-form"><strong style="color: #009688">Création du formulaire</strong><br><br></h2>
-              <button type="button" id="leLabel" class="btnprincipal btn btn-outline-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Fieldset</button>
-              <button type="button" id="leBouton" class="btnprincipal btn btn-outline-warning">Bouton</button>
-              <button type="button" id="cForm" class="btnprincipal btn btn-outline-warning">Code Formulaire</button>
-              <button type="button" id="supprimer" class="btnprincipal btn btn-outline-warning">Effacer les éléments</button>
-              <hr>
+          <div class="w3-container">
+            <div class="side-menu-container">
+              <div id="droite">
+                <h2 class="title-create-form"><strong style="color: #009688">Création du formulaire</strong><br><br></h2>
+                <button type="button" id="leLabel" class="btnprincipal btn btn-outline-warning" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Fieldset</button>
+                <button type="button" id="leBouton" class="btnprincipal btn btn-outline-warning">Bouton</button>
+                <button type="button" id="cForm" class="btnprincipal btn btn-outline-warning">Code Formulaire</button>
+                <button type="button" id="supprimer" class="btnprincipal btn btn-outline-warning">Effacer les éléments</button>
+                <hr>
 
-              <div id="container">
-                <label>Choisissez un Label</label>
-                <input type="text" id="idinput">
-                <br/><br/>
-                <label>Choisissez le type du champs </label>
-                <br/>
-                <input type="radio" id="typeField_txt" name="chooseType" value="text" checked /><label for="typeField_txt">Text</label>
-                <br/>
-                <input type="radio" id="typeField_pswd" name="chooseType" value="password"  /><label for="typeField_pswd">Password</label>
-                <br/>
-                <input type="radio" id="typeField_date" name="chooseType" value="date" /><label for="typeField_date">Date</label>
-                <br/>
-                <input type="radio" id="typeField_mail" name="chooseType" value="email" /><label for="typeField_mail">Email</label>
-                <br/>
-                <input type="radio" id="typeField_nb" name="chooseType" value="number" /><label for="typeField_nb">Number</label>
-                <br/><br/>
-                <button type="button" class="btn" id="btnok">Valider</button><button type="button" class="btn" id="btnannuler">Annuler</button>
+                <div id="container">
+                  <div id="container-fluid">
+                    <p>Choisissez un Label</p>
+                  </div>
+                  <input type="text" id="idinput">
+                  <br/><br/>
+                  <label>Choisissez le type du champs </label>
+                  <br/>
+                  <input type="radio" id="typeField_txt" name="chooseType" value="text" checked /><label for="typeField_txt">Text</label>
+                  <br/>
+                  <input type="radio" id="typeField_pswd" name="chooseType" value="password"  /><label for="typeField_pswd">Password</label>
+                  <br/>
+                  <input type="radio" id="typeField_date" name="chooseType" value="date" /><label for="typeField_date">Date</label>
+                  <br/>
+                  <input type="radio" id="typeField_mail" name="chooseType" value="email" /><label for="typeField_mail">Email</label>
+                  <br/>
+                  <input type="radio" id="typeField_nb" name="chooseType" value="number" /><label for="typeField_nb">Number</label>
+                  <br/><br/>
+                  Pour rendre ce champs obligatoire, cocher cette case<br/><input type="checkbox" id="required" name="required" value="required">Required
+                  <br/><br/>
+                  <button type="button" class="btn" id="btnok">Valider</button>
+                  <button type="button" class="btn" id="btnannuler">Annuler</button>
+                </div>
+                <div id="container2"></div>
               </div>
-              <div id="container2"></div>
             </div>
           </div>
-        </div>
-      </div><br>
+        </div><br>
 
-    <!-- End Left Column -->
-    </div>
-
-    <!-- Right Column -->
-    <div class="w3-twothird">
-
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Formulaire généré</h2>
-        <div class="w3-container">
-          <div id="gauche"></div>
-          <br/>
-        </div>
+        <!-- End Left Column -->
       </div>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Code HTML du formulaire</h2>
-        <div class="w3-container">
-          <div id="code-form"></div>
+      <!-- Right Column -->
+      <div class="w3-twothird">
+
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Formulaire généré</h2>
+          <div class="w3-container">
+            <div id="gauche"></div>
+            <br/>
+          </div>
         </div>
+
+        <div class="w3-container w3-card w3-white">
+          <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Code HTML du formulaire</h2>
+          <div class="w3-container">
+            <div id="code-form"></div>
+          </div>
+        </div>
+
+        <!-- End Right Column -->
       </div>
 
-    <!-- End Right Column -->
+      <!-- End Grid -->
     </div>
 
-  <!-- End Grid -->
+    <!-- End Page Container -->
   </div>
 
-  <!-- End Page Container -->
-</div>
+  <footer class="w3-container w3-teal w3-center w3-margin-top">
+    <p>Kokosaap Generator ;)</p>
+    <p>See you !</p>
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
-  <p>Kokosaap Generator ;)</p>
-  <p>See you !</p>
-
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="fonctionnalities.js"></script>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="fonctionnalities.js"></script>
 </body>
 </html>

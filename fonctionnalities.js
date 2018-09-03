@@ -6,7 +6,7 @@ $('#leLabel').click(function(){
   // Ajax
   $('#container2').load('initialize.html .zlabel');
 
-  // Un clic puis on descative les btn principal jusqu'à ce qu'on remplisse le formulaire
+  // Un clic puis on desactive les btn principal jusqu'à ce qu'on remplisse le formulaire
   $('.btnprincipal').attr('disabled','disabled');
   $('#container').hide().fadeIn(0.9);
   $('#container2').hide().fadeIn(0.9);
@@ -104,8 +104,21 @@ $('#cForm').click(function(){
   // Input
   $("#idinput").focus();
 
+  var regex_br = /<br\s*\/?>/g;
   var htmlString = $('#gauche').html();
-  $('#code-form').text('<form>' +htmlString+ '</form>');
+  var remove_br = htmlString.match(regex_br);
+
+  if (remove_br == null) {
+    console.log("ok ya rien dans le tab");
+    $('#code-form').text('<form>' +htmlString+ '</form>');
+  }
+  else {
+    console.log("il y a au moins un truc dans ce tab");
+    remove_br.splice(0,1);
+    $('#code-form').text('<form>' +htmlString+ '</form>');
+  }
+  console.log(remove_br);
+
 });
  // Fin code formulaire
 
