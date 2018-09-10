@@ -106,6 +106,7 @@ $('#cForm').click(function(){
 
   var regex_br = /<br\s*\/?>/g;
   var htmlString = $('#gauche').html();
+  console.log(htmlString);
   var remove_br = htmlString.match(regex_br);
 
   if (remove_br == null) {
@@ -115,7 +116,7 @@ $('#cForm').click(function(){
   else {
     console.log("il y a au moins un truc dans ce tab");
     remove_br.splice(0,1);
-    $('#code-form').text('<form>' +htmlString+ '</form>');
+    $('#code-form').text('<form>'+ remove_br +htmlString+ '</form>');
   }
   console.log(remove_br);
 
